@@ -96,7 +96,6 @@ const registerUser = asyncHandler(async (req, res) => {
     .status(201)
     .json(new ApiResponse(200, createdUser, "User registered Successfully"));
 
-  res.send({ msg: "recieved" });
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -295,7 +294,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(200, user, "Account details updated successfully");
+    .json(new ApiResponse(200, user, "Account details updated successfully"));
 });
 
 const updateUerAvatar = asyncHandler(async (req, res) => {
@@ -368,6 +367,6 @@ export {
   changeCurrentPassword,
   getCurrentUser,
   updateAccountDetails,
-  updatedAvatar,
+  updateUerAvatar,
   updateUserCoverImage
 };
